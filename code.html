@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Code — Martin Fankhauser</title>
-  <meta name="description" content="Research code by Martin Fankhauser: Intervalregression, SVARs, and Model Confidence Set (MCS).">
+  <meta name="description" content="Research code by Martin Fankhauser: interval-valued regression, SVARs, and Model Confidence Set (MCS).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,500;7..72,650&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   </header>
 
   <main class="site-main">
-    <section class="section" style="padding-top: 2.75rem;">
+    <section class="section code-page" style="padding-top: 2.75rem;">
       <h1 class="section__title reveal">Code</h1>
       <p class="section__intro reveal">
         Research code in R and Stata. The packages below live in the public repository
@@ -33,7 +33,7 @@
       </p>
 
       <article class="paper reveal">
-        <h2 class="paper__title">Intervalregression <span class="paper__status">Beta</span></h2>
+        <h2 class="paper__title">Regression with Interval-Valued and Missing Covariate <span class="paper__status">Beta Version</span></h2>
         <p class="paper__meta">R · folder <code>INTERVALREG/</code></p>
         <p>Partial-identification estimator and confidence sets for a scalar regression when the regressor and/or the outcome are observed only as intervals (or are missing). Implements worst-case interval regression for linear and probit models, with an identified-set estimator and bootstrap confidence sets.</p>
         <div class="paper__links">
@@ -46,29 +46,35 @@
         <h2 class="paper__title">SVARs</h2>
         <p class="paper__meta">R · folder <code>SVARs/</code></p>
         <p>Bayesian structural VARs in the Arias–Rubio-Ramírez–Waggoner framework. Three identification routines share the same building blocks (orthogonal rotations and volume-element importance sampling) but target different restrictions:</p>
-        <div class="list-block" style="margin: 0.75rem 0 1rem;">
-          <h3>Proxy SVAR</h3>
-          <p style="margin: 0 0 0.55rem; color: var(--muted);">Bayesian proxy-SVARs with external instruments (optional impact sign restrictions).</p>
-          <p class="paper__meta" style="margin-bottom: 0.55rem;">Arias, J. E., Rubio-Ramírez, J. F. and Waggoner, D. F. (2021), “Inference in Bayesian Proxy-SVARs,” <em>Journal of Econometrics</em> 225(1), 88–106.</p>
-          <div class="paper__links">
-            <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/proxyBVAR_arw2021" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/proxyBVAR_arw2021/README.md" target="_blank" rel="noopener noreferrer">README</a>
+        <div class="code-methods">
+          <div class="code-method">
+            <h3 class="code-method__title">Proxy SVAR</h3>
+            <p class="code-method__lede">Bayesian proxy-SVARs with external instruments (optional impact sign restrictions).</p>
+            <p class="paper__meta">Arias, J. E., Rubio-Ramírez, J. F. and Waggoner, D. F. (2021), “Inference in Bayesian Proxy-SVARs,” <em>Journal of Econometrics</em> 225(1), 88–106.</p>
+            <div class="paper__links">
+              <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/proxyBVAR_arw2021" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/proxyBVAR_arw2021/README.md" target="_blank" rel="noopener noreferrer">README</a>
+            </div>
           </div>
 
-          <h3>Zero-sign SVAR</h3>
-          <p style="margin: 0 0 0.55rem; color: var(--muted);">Sign and zero restrictions on impulse responses at any horizon (including the long run).</p>
-          <p class="paper__meta" style="margin-bottom: 0.55rem;">Arias, J. E., Rubio-Ramírez, J. F. and Waggoner, D. F. (2018), “Inference Based on Structural Vector Autoregressions Identified With Sign and Zero Restrictions: Theory and Applications,” <em>Econometrica</em> 86(2), 685–720.</p>
-          <div class="paper__links">
-            <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/zerosign_arw2018" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/zerosign_arw2018/README.md" target="_blank" rel="noopener noreferrer">README</a>
+          <div class="code-method">
+            <h3 class="code-method__title">Zero-sign SVAR</h3>
+            <p class="code-method__lede">Sign and zero restrictions on impulse responses at any horizon (including the long run).</p>
+            <p class="paper__meta">Arias, J. E., Rubio-Ramírez, J. F. and Waggoner, D. F. (2018), “Inference Based on Structural Vector Autoregressions Identified With Sign and Zero Restrictions: Theory and Applications,” <em>Econometrica</em> 86(2), 685–720.</p>
+            <div class="paper__links">
+              <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/zerosign_arw2018" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/zerosign_arw2018/README.md" target="_blank" rel="noopener noreferrer">README</a>
+            </div>
           </div>
 
-          <h3>Zero-sign + systematic component SVAR</h3>
-          <p style="margin: 0 0 0.55rem; color: var(--muted);">Sign and zero restrictions on the structural coefficients <em>A</em><sub>0</sub> (policy rule) as well as on impulse responses.</p>
-          <p class="paper__meta" style="margin-bottom: 0.55rem;">Arias, J. E., Caldara, D. and Rubio-Ramírez, J. F. (2019), “The systematic component of monetary policy in SVARs: An agnostic identification procedure,” <em>Journal of Monetary Economics</em> 101, 1–13.</p>
-          <div class="paper__links">
-            <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/systematic_component_acr2019" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/systematic_component_acr2019/README.md" target="_blank" rel="noopener noreferrer">README</a>
+          <div class="code-method">
+            <h3 class="code-method__title">Zero-sign + systematic component SVAR</h3>
+            <p class="code-method__lede">Sign and zero restrictions on the structural coefficients <em>A</em><sub>0</sub> (policy rule) as well as on impulse responses.</p>
+            <p class="paper__meta">Arias, J. E., Caldara, D. and Rubio-Ramírez, J. F. (2019), “The systematic component of monetary policy in SVARs: An agnostic identification procedure,” <em>Journal of Monetary Economics</em> 101, 1–13.</p>
+            <div class="paper__links">
+              <a href="https://github.com/martinfankhauser/code_base/tree/main/SVARs/systematic_component_acr2019" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/martinfankhauser/code_base/blob/main/SVARs/systematic_component_acr2019/README.md" target="_blank" rel="noopener noreferrer">README</a>
+            </div>
           </div>
         </div>
         <div class="paper__links">
